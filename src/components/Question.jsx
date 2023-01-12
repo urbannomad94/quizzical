@@ -25,7 +25,7 @@ export default function Question({ question, handleClickAnswer, id }) {
         <button
           key={nanoid()}
           id={id}
-          onClick={handleClick}
+          onClick={() => handleClick(answer)}
           className={answer === question.selected ? 'answer selected' : 'answer'}
         >
           {answer}

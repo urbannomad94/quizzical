@@ -71,6 +71,7 @@ export default function Quiz() {
       <div>
         {questionElements}
         <div className="btn-wrapper">
+            {checked && <span className="score">You scored: {correctAnswers}/5 correct answers</span>}
             <button onClick={checked ? handlePlayAgain : handleCheck} className="btn check-btn">{checked ? 'Play Again' : 'Check Answers'}</button>
         </div>
       </div>
