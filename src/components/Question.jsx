@@ -1,25 +1,28 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
-export default function Question({ question, correctAnswer, incorrectAnswers, markChecked }) {
+export default function Question({ question, checkAnswer }) {
     // const [selectedAnswer, setSelectedAnswer] = useState();
 
     // const styles = {
     //     backgroundColor: selectedAnswer ? '#59E391' : 'white',
     // };
 
-    const answerArray = [...incorrectAnswers, correctAnswer]
-    const answersElement = answerArray.sort((a, b) => 0.5 - Math.random()).map((answer, i) => (
-        <>
-            <li
+    let answers = question.answers;
+
+    const answersElement = answers.map((answer, i) => (
+          <li
             key={i}
-            onClick={markChecked}
-            className="answer">{answer}</li>
-        </>
+            onClick={checkAnswer}
+            className="answer"
+          >
+            {answer}
+          </li>
     ))
 
     return (
       <div className="question">
-        <h2>{question}</h2>
+        <h2>{question.question}</h2>
         <ul className="answer-selection">
             {answersElement}
         </ul>

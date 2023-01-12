@@ -1,5 +1,6 @@
 import Start from './components/Start'
 import Quiz from './components/Quiz'
+import { nanoid } from 'nanoid';
 import { useState } from 'react';
 
 export default function App() {
