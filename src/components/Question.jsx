@@ -1,32 +1,46 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-export default function Question({ question, checkAnswer }) {
-    // const [selectedAnswer, setSelectedAnswer] = useState();
-
-    // const styles = {
-    //     backgroundColor: selectedAnswer ? '#59E391' : 'white',
-    // };
-
+export default function Question({ question, handleClickAnswer, id }) {
     let answers = question.answers;
+    function handleClick(answer) {
+      if (question.checked) {
+        return;
+      }
+      handleClickAnswer(id, answer)
+    }
 
-    const answersElement = answers.map((answer, i) => (
-          <li
-            key={i}
-            onClick={checkAnswer}
-            className="answer"
-          >
-            {answer}
-          </li>
-    ))
+    const answersElement = answers.map(answer => {
+      let id = null;
+      if (question.checked)  {
+        if (question.correctAnswer == answer) {
+          id = 'correct'
+        } else if (question.selected === answer) {
+          id = 'incorrect'
+        } else {
+          id = 'not-selected'
+        }
+      }
+      return (
+        <button
+          key={nanoid()}
+          id={id}
+          onClick={handleClick}
+          className={answer === question.selected ? 'answer selected' : 'answer'}
+        >
+          {answer}
+        </button>
+      )
+    })
+
+
 
     return (
       <div className="question">
         <h2>{question.question}</h2>
-        <ul className="answer-selection">
+        <div className="answer-selection">
             {answersElement}
-        </ul>
-        <hr />
+        </div >
       </div>
     )
   }

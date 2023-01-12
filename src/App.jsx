@@ -7,7 +7,7 @@ export default function App() {
   const [quizActive, setQuizActive] = useState(false);
 
   function startQuiz() {
-    setQuizActive(true);
+    setQuizActive(x => !x);
   }
 
   return (

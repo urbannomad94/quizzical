@@ -62,7 +62,7 @@ body {
     font-size: 16px;
 }
 
-.answer-btn {
+.check-btn {
     width: 120px;
     height: 35px;
     border-radius: 10px;
@@ -87,7 +87,7 @@ body {
     gap: 15px;
 }
 
-.question li {
+.answer {
     list-style-type: none;
     height: 20px;
     min-width: 20px;
@@ -101,7 +101,7 @@ body {
     padding: 5px 10px;
 }
 
-.question li:hover {
+.answer:hover {
     cursor: pointer;
     transform: scale(1.1);
     background: #D6DBF5;
@@ -114,7 +114,7 @@ body {
 }
 
 
-.answer-btn {
+.check-btn {
     margin-top: 15px;
 }
 
