@@ -89,7 +89,7 @@ body {
 
 .answer {
     list-style-type: none;
-    height: 20px;
+    min-height: 20px;
     min-width: 20px;
     padding: 5px;
     background:#F5F7FB;
