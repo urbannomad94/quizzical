@@ -7,23 +7,11 @@ body {
 }
 
 .container {
-    width: 550px;
-    height: 550px;
+    max-width: 550px;
+    max-height: 550px;
     margin: auto;
     position: relative;
 }
-
-/* .top-right-splash {
-    position: absolute;
-    width: 297px;
-    height: 235px;
-    left: 62.24%;
-    right: -62.24%;
-    top: 0%;
-    bottom: -161.16%;
-    background: #FFFAD1;
-    transform: rotate(-128.49deg);
-} */
 
 .start-page {
     height: 100%;
@@ -36,10 +24,12 @@ body {
     #293264
 }
 
-.start-page>h1 {
+h1 {
     font-family: Karla;
     margin: 10px;
     font-size: 31.25px;
+    text-align: center;
+    color: #293264
 }
 
 .start-page>h2 {

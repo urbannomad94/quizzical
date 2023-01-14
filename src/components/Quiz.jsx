@@ -69,6 +69,7 @@ export default function Quiz() {
 
     return (
       <div>
+        <h1>Quizzical</h1>
         {questionElements}
         <div className="btn-wrapper">
             {checked && <span className="score">You scored: {correctAnswers}/5 correct answers</span>}
